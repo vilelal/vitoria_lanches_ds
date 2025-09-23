@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GgLsR4YCJvk=",
+  "dgSpecHash": "UfRwe+pVJZ4=",
   "success": true,
-  "projectFilePath": "U:\\DS\\3Bimestre\\Vitoria_lanches\\Vitoria_lanches.csproj",
+  "projectFilePath": "U:\\DS\\3Bimestre\\vitoria_lanches_ds-main\\Vitoria_lanches\\Vitoria_lanches.csproj",
   "expectedPackageFiles": [
     "D:\\home\\lucas_24063\\.nuget\\packages\\bouncycastle.cryptography\\2.5.1\\bouncycastle.cryptography.2.5.1.nupkg.sha512",
     "D:\\home\\lucas_24063\\.nuget\\packages\\google.protobuf\\3.30.0\\google.protobuf.3.30.0.nupkg.sha512",

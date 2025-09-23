@@ -29,21 +29,32 @@ namespace Vitoria_lanches
 
         private void btnCadastrarUser_Click(object sender, EventArgs e)
         {
-            using (MySqlConnection conn = new MySqlConnection(string_conn))
+            try
             {
-                conn.Open();
+                using (MySqlConnection conn = new MySqlConnection(string_conn))
+                {
+                    conn.Open();
 
-                string AddUser = "INSERT INTO tb_usuarios (TB_USUARIOS_USERNAME,TB_USUARIOS_PASSWORD,TB_USUARIOS_TIPO)"
-                    +" Values (@username,@password,'cliente')";
-                MySqlCommand stmt = new MySqlCommand(AddUser, conn);
+                    string AddUser = "INSERT INTO tb_usuarios (TB_USUARIOS_USERNAME,TB_USUARIOS_PASSWORD,TB_USUARIOS_TIPO)"
+                        + " Values (@username,@password,'cliente')";
+                    MySqlCommand stmt = new MySqlCommand(AddUser, conn);
 
-                stmt.Parameters.AddWithValue("@username", txtUsername.Text);
-                stmt.Parameters.AddWithValue("@password", txtPassWord.Text);
-                stmt.ExecuteNonQuery();
+                    stmt.Parameters.AddWithValue("@username", txtUsername.Text);
+                    stmt.Parameters.AddWithValue("@password", txtPassWord.Text);
+                    stmt.ExecuteNonQuery();
 
-                MessageBox.Show("Cadastro concluído com sucesso com sucesso!");
-                conn.Close();
+                    MessageBox.Show("Cadastro concluído com sucesso!");
+                    conn.Close();
 
+                   
+
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao se cadastrar {ex.Message}");
             }
         }
     }

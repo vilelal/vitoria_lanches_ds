@@ -4,7 +4,16 @@
     <Compile Update="CadUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GerenciadorProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TelaAdm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="LogarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
