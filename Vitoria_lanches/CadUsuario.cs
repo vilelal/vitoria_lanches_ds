@@ -15,7 +15,7 @@ namespace Vitoria_lanches
 {
     public partial class CadUsuario : Form
     {
-        private string string_conn = "server=127.0.0.1;database=bd_vitoria_lanches;user=root;password=root;";
+        private string string_conn = "server=127.0.0.1;database=bd_vitoria_lanches;user=root;password=Pe20082001.;";
         public CadUsuario()
         {
             InitializeComponent();
@@ -46,7 +46,7 @@ namespace Vitoria_lanches
                     MessageBox.Show("Cadastro concluído com sucesso!");
                     conn.Close();
 
-                   
+
 
 
 
@@ -57,5 +57,7 @@ namespace Vitoria_lanches
                 MessageBox.Show($"Erro ao se cadastrar {ex.Message}");
             }
         }
+
+      
     }
 }

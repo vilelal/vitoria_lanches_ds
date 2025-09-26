@@ -38,7 +38,7 @@
             // 
             // btnCadastrarUser
             // 
-            btnCadastrarUser.Location = new Point(328, 295);
+            btnCadastrarUser.Location = new Point(345, 309);
             btnCadastrarUser.Name = "btnCadastrarUser";
             btnCadastrarUser.Size = new Size(75, 23);
             btnCadastrarUser.TabIndex = 0;
@@ -49,22 +49,23 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(328, 85);
+            label1.Font = new Font("Segoe UI", 32F);
+            label1.Location = new Point(224, 38);
             label1.Name = "label1";
-            label1.Size = new Size(38, 15);
+            label1.Size = new Size(331, 59);
             label1.TabIndex = 1;
-            label1.Text = "label1";
+            label1.Text = "Cadastrar Conta";
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(315, 147);
+            txtUsername.Location = new Point(332, 161);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(100, 23);
             txtUsername.TabIndex = 2;
             // 
             // txtPassWord
             // 
-            txtPassWord.Location = new Point(315, 234);
+            txtPassWord.Location = new Point(332, 248);
             txtPassWord.Name = "txtPassWord";
             txtPassWord.Size = new Size(100, 23);
             txtPassWord.TabIndex = 3;

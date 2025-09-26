@@ -30,7 +30,7 @@
         {
             panel1 = new Panel();
             btnCadastrarProd = new Button();
-            boxTipoProd = new ComboBox();
+            cbTipoProd = new ComboBox();
             label5 = new Label();
             label3 = new Label();
             label6 = new Label();
@@ -45,7 +45,7 @@
             // panel1
             // 
             panel1.Controls.Add(btnCadastrarProd);
-            panel1.Controls.Add(boxTipoProd);
+            panel1.Controls.Add(cbTipoProd);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label6);
@@ -70,13 +70,14 @@
             btnCadastrarProd.UseVisualStyleBackColor = true;
             btnCadastrarProd.Click += btnCadastrarProd_Click;
             // 
-            // boxTipoProd
+            // cbTipoProd
             // 
-            boxTipoProd.FormattingEnabled = true;
-            boxTipoProd.Location = new Point(458, 153);
-            boxTipoProd.Name = "boxTipoProd";
-            boxTipoProd.Size = new Size(121, 23);
-            boxTipoProd.TabIndex = 5;
+            cbTipoProd.FormattingEnabled = true;
+            cbTipoProd.Location = new Point(458, 153);
+            cbTipoProd.Name = "cbTipoProd";
+            cbTipoProd.Size = new Size(121, 23);
+            cbTipoProd.TabIndex = 5;
+            cbTipoProd.SelectedIndexChanged += cbTipoProd_SelectedIndexChanged;
             // 
             // label5
             // 
@@ -101,14 +102,14 @@
             label6.AutoSize = true;
             label6.Location = new Point(458, 135);
             label6.Name = "label6";
-            label6.Size = new Size(97, 15);
+            label6.Size = new Size(96, 15);
             label6.TabIndex = 4;
             label6.Text = "Tipo do produto:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(172, 254);
+            label2.Location = new Point(171, 269);
             label2.Name = "label2";
             label2.Size = new Size(40, 15);
             label2.TabIndex = 4;
@@ -119,12 +120,12 @@
             txtDescricaoProd.Location = new Point(172, 207);
             txtDescricaoProd.Multiline = true;
             txtDescricaoProd.Name = "txtDescricaoProd";
-            txtDescricaoProd.Size = new Size(147, 23);
+            txtDescricaoProd.Size = new Size(147, 59);
             txtDescricaoProd.TabIndex = 3;
             // 
             // txtPrecoProd
             // 
-            txtPrecoProd.Location = new Point(172, 272);
+            txtPrecoProd.Location = new Point(171, 287);
             txtPrecoProd.Name = "txtPrecoProd";
             txtPrecoProd.Size = new Size(147, 23);
             txtPrecoProd.TabIndex = 2;
@@ -154,7 +155,6 @@
             Controls.Add(panel1);
             Name = "GerenciadorProduto";
             Text = "GerenciadorProduto";
-            Load += GerenciadorProduto_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -171,7 +171,7 @@
         private Label label3;
         private Label label5;
         private Label label6;
-        private ComboBox boxTipoProd;
+        private ComboBox cbTipoProd;
         private Button btnCadastrarProd;
     }
 }

@@ -6,7 +6,7 @@ namespace Vitoria_lanches
 {
     public partial class LogarUsuario : Form
     {
-        private string string_conn = "server=127.0.0.1;database=bd_vitoria_lanches;user=root;password=root;";
+        private string string_conn = "server=127.0.0.1;database=bd_vitoria_lanches;user=root;password=Pe20082001.;";
 
         public LogarUsuario()
         {
@@ -37,7 +37,7 @@ namespace Vitoria_lanches
 
                             if (tipoUsuario.Equals("adm", StringComparison.OrdinalIgnoreCase))
                             {
-                                TelaAdm gerenciar= new TelaAdm();
+                                TelaAdm gerenciar = new TelaAdm();
                                 gerenciar.TopLevel = false;
                                 gerenciar.FormBorderStyle = FormBorderStyle.None;
                                 gerenciar.Dock = DockStyle.Fill;
@@ -74,6 +74,11 @@ namespace Vitoria_lanches
         {
             string username;
             string password;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

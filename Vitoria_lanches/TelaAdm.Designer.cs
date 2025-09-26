@@ -33,9 +33,7 @@
             gerenciarProdutoToolStripMenuItem = new ToolStripMenuItem();
             relatórioToolStripMenuItem = new ToolStripMenuItem();
             panelADM = new Panel();
-            label1 = new Label();
             menuStrip1.SuspendLayout();
-            panelADM.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -69,22 +67,11 @@
             // 
             // panelADM
             // 
-            panelADM.Controls.Add(label1);
             panelADM.Dock = DockStyle.Fill;
             panelADM.Location = new Point(0, 24);
             panelADM.Name = "panelADM";
             panelADM.Size = new Size(800, 426);
             panelADM.TabIndex = 1;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 32F);
-            label1.Location = new Point(266, 68);
-            label1.Name = "label1";
-            label1.Size = new Size(246, 59);
-            label1.TabIndex = 0;
-            label1.Text = "Você é adm";
             // 
             // TelaAdm
             // 
@@ -98,8 +85,6 @@
             Text = "GerenciadorProduto";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
-            panelADM.ResumeLayout(false);
-            panelADM.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -111,6 +96,5 @@
         private ToolStripMenuItem gerenciarProdutoToolStripMenuItem;
         private ToolStripMenuItem relatórioToolStripMenuItem;
         private Panel panelADM;
-        private Label label1;
     }
 }
