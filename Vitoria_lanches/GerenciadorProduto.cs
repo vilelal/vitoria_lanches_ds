@@ -13,7 +13,7 @@ namespace Vitoria_lanches
 {
     public partial class GerenciadorProduto : Form
     {
-        private string string_conn = "server=127.0.0.1;database=bd_vitoria_lanches;user=root;password=Pe20082001.;";
+        private string string_conn = "server=127.0.0.1;database=bd_vitoria_lanches;user=root;password=root;";
 
         public GerenciadorProduto()
         {
@@ -115,9 +115,10 @@ namespace Vitoria_lanches
                         }
 
 
-                        TipoProd = IDTipoProd;
 
                     }
+                    TipoProd = IDTipoProd;
+
 
                 }
                 else

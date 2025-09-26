@@ -33,6 +33,10 @@
             gerenciarProdutoToolStripMenuItem = new ToolStripMenuItem();
             relatórioToolStripMenuItem = new ToolStripMenuItem();
             panelADM = new Panel();
+            criarProdutoToolStripMenuItem = new ToolStripMenuItem();
+            excluirProdutoToolStripMenuItem = new ToolStripMenuItem();
+            editarProdutoToolStripMenuItem = new ToolStripMenuItem();
+            produtosCadastradosToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -54,10 +58,10 @@
             // 
             // gerenciarProdutoToolStripMenuItem
             // 
+            gerenciarProdutoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { criarProdutoToolStripMenuItem, excluirProdutoToolStripMenuItem, editarProdutoToolStripMenuItem, produtosCadastradosToolStripMenuItem });
             gerenciarProdutoToolStripMenuItem.Name = "gerenciarProdutoToolStripMenuItem";
-            gerenciarProdutoToolStripMenuItem.Size = new Size(115, 20);
-            gerenciarProdutoToolStripMenuItem.Text = "Gerenciar Produto";
-            gerenciarProdutoToolStripMenuItem.Click += gerenciarProdutoToolStripMenuItem_Click;
+            gerenciarProdutoToolStripMenuItem.Size = new Size(120, 20);
+            gerenciarProdutoToolStripMenuItem.Text = "Gerenciar Produtos";
             // 
             // relatórioToolStripMenuItem
             // 
@@ -72,6 +76,31 @@
             panelADM.Name = "panelADM";
             panelADM.Size = new Size(800, 426);
             panelADM.TabIndex = 1;
+            // 
+            // criarProdutoToolStripMenuItem
+            // 
+            criarProdutoToolStripMenuItem.Name = "criarProdutoToolStripMenuItem";
+            criarProdutoToolStripMenuItem.Size = new Size(190, 22);
+            criarProdutoToolStripMenuItem.Text = "Criar Produto";
+            criarProdutoToolStripMenuItem.Click += criarProdutoToolStripMenuItem_Click;
+            // 
+            // excluirProdutoToolStripMenuItem
+            // 
+            excluirProdutoToolStripMenuItem.Name = "excluirProdutoToolStripMenuItem";
+            excluirProdutoToolStripMenuItem.Size = new Size(190, 22);
+            excluirProdutoToolStripMenuItem.Text = "Excluir Produto";
+            // 
+            // editarProdutoToolStripMenuItem
+            // 
+            editarProdutoToolStripMenuItem.Name = "editarProdutoToolStripMenuItem";
+            editarProdutoToolStripMenuItem.Size = new Size(190, 22);
+            editarProdutoToolStripMenuItem.Text = "Editar Produto";
+            // 
+            // produtosCadastradosToolStripMenuItem
+            // 
+            produtosCadastradosToolStripMenuItem.Name = "produtosCadastradosToolStripMenuItem";
+            produtosCadastradosToolStripMenuItem.Size = new Size(190, 22);
+            produtosCadastradosToolStripMenuItem.Text = "Produtos Cadastrados";
             // 
             // TelaAdm
             // 
@@ -96,5 +125,9 @@
         private ToolStripMenuItem gerenciarProdutoToolStripMenuItem;
         private ToolStripMenuItem relatórioToolStripMenuItem;
         private Panel panelADM;
+        private ToolStripMenuItem criarProdutoToolStripMenuItem;
+        private ToolStripMenuItem excluirProdutoToolStripMenuItem;
+        private ToolStripMenuItem editarProdutoToolStripMenuItem;
+        private ToolStripMenuItem produtosCadastradosToolStripMenuItem;
     }
 }

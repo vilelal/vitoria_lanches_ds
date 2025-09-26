@@ -109,3 +109,7 @@ C:\Users\vilel\OneDrive\Desktop\vitoria_lanches_ds-main\Vitoria_lanches\obj\Debu
 C:\Users\vilel\OneDrive\Desktop\vitoria_lanches_ds-main\Vitoria_lanches\obj\Debug\net8.0-windows\Vitoria_lanches.genruntimeconfig.cache
 C:\Users\vilel\OneDrive\Desktop\vitoria_lanches_ds-main\Vitoria_lanches\obj\Debug\net8.0-windows\ref\Vitoria_lanches.dll
 C:\Users\vilel\OneDrive\Desktop\vitoria_lanches_ds-main\Vitoria_lanches\obj\Debug\net8.0-windows\Vitoria_lanches.boasvindas.resources
+U:\DS\3Bimestre\Vitoria_lanches\obj\Debug\net8.0-windows\Vitoria_lanches.boasvindas.resources
+U:\DS\3Bimestre\Vitoria_lanches\obj\Debug\net8.0-windows\Vitoria_lanches.GerenciadorProduto.resources
+U:\DS\3Bimestre\Vitoria_lanches\obj\Debug\net8.0-windows\Vitoria_lanches.LogarUsuario.resources
+U:\DS\3Bimestre\Vitoria_lanches\obj\Debug\net8.0-windows\Vitoria_lanches.TelaAdm.resources

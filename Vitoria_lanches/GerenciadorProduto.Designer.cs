@@ -39,11 +39,15 @@
             txtPrecoProd = new TextBox();
             txtNomeProd = new TextBox();
             label1 = new Label();
+            btnAddTipoProd = new Button();
+            label4 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(btnAddTipoProd);
             panel1.Controls.Add(btnCadastrarProd);
             panel1.Controls.Add(cbTipoProd);
             panel1.Controls.Add(label5);
@@ -102,7 +106,7 @@
             label6.AutoSize = true;
             label6.Location = new Point(458, 135);
             label6.Name = "label6";
-            label6.Size = new Size(96, 15);
+            label6.Size = new Size(97, 15);
             label6.TabIndex = 4;
             label6.Text = "Tipo do produto:";
             // 
@@ -147,6 +151,24 @@
             label1.TabIndex = 0;
             label1.Text = "Adicionar produto";
             // 
+            // btnAddTipoProd
+            // 
+            btnAddTipoProd.Location = new Point(456, 206);
+            btnAddTipoProd.Name = "btnAddTipoProd";
+            btnAddTipoProd.Size = new Size(123, 34);
+            btnAddTipoProd.TabIndex = 7;
+            btnAddTipoProd.Text = "Adicionar";
+            btnAddTipoProd.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(458, 189);
+            label4.Name = "label4";
+            label4.Size = new Size(144, 15);
+            label4.TabIndex = 8;
+            label4.Text = "Adicionar tipo de produto";
+            // 
             // GerenciadorProduto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -173,5 +195,7 @@
         private Label label6;
         private ComboBox cbTipoProd;
         private Button btnCadastrarProd;
+        private Label label4;
+        private Button btnAddTipoProd;
     }
 }

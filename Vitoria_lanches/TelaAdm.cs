@@ -18,7 +18,7 @@ namespace Vitoria_lanches
             TelaInicial();
         }
 
-        private void gerenciarProd()
+        private void criarProd()
         {
             GerenciadorProduto gerenciarProd = new GerenciadorProduto();
             gerenciarProd.TopLevel = false;
@@ -28,7 +28,7 @@ namespace Vitoria_lanches
             panelADM.Controls.Add(gerenciarProd);
             gerenciarProd.Show();
         }
-        
+
         private void TelaInicial()
         {
             boasvindas Boasvindas = new boasvindas();
@@ -42,12 +42,16 @@ namespace Vitoria_lanches
 
         private void gerenciarProdutoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            gerenciarProd();
         }
         //Criar um form para ficar aparecendo como tela de boas vindas
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TelaInicial();
+        }
+
+        private void criarProdutoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            criarProd();
         }
     }
 }
