@@ -32,14 +32,14 @@
             btnProx = new Button();
             BtnAnterior = new Button();
             textBox4 = new TextBox();
-            comboBox1 = new ComboBox();
+            cbTipoProd = new ComboBox();
             btnAttProduto = new Button();
             label4 = new Label();
             label3 = new Label();
             label5 = new Label();
             label2 = new Label();
             label1 = new Label();
-            textBox3 = new TextBox();
+            txtPrecoUnit = new TextBox();
             txtDescricaoProd = new TextBox();
             txtNomeProduto = new TextBox();
             panel1.SuspendLayout();
@@ -50,14 +50,14 @@
             panel1.Controls.Add(btnProx);
             panel1.Controls.Add(BtnAnterior);
             panel1.Controls.Add(textBox4);
-            panel1.Controls.Add(comboBox1);
+            panel1.Controls.Add(cbTipoProd);
             panel1.Controls.Add(btnAttProduto);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(textBox3);
+            panel1.Controls.Add(txtPrecoUnit);
             panel1.Controls.Add(txtDescricaoProd);
             panel1.Controls.Add(txtNomeProduto);
             panel1.Dock = DockStyle.Fill;
@@ -74,6 +74,7 @@
             btnProx.TabIndex = 11;
             btnProx.Text = "Próximo";
             btnProx.UseVisualStyleBackColor = true;
+            btnProx.Click += btnProx_Click_1;
             // 
             // BtnAnterior
             // 
@@ -92,13 +93,13 @@
             textBox4.Size = new Size(230, 251);
             textBox4.TabIndex = 9;
             // 
-            // comboBox1
+            // cbTipoProd
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(395, 119);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 8;
+            cbTipoProd.FormattingEnabled = true;
+            cbTipoProd.Location = new Point(395, 119);
+            cbTipoProd.Name = "cbTipoProd";
+            cbTipoProd.Size = new Size(121, 23);
+            cbTipoProd.TabIndex = 8;
             // 
             // btnAttProduto
             // 
@@ -155,12 +156,12 @@
             label1.TabIndex = 3;
             label1.Text = "Editar Produto";
             // 
-            // textBox3
+            // txtPrecoUnit
             // 
-            textBox3.Location = new Point(101, 248);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(156, 23);
-            textBox3.TabIndex = 2;
+            txtPrecoUnit.Location = new Point(101, 248);
+            txtPrecoUnit.Name = "txtPrecoUnit";
+            txtPrecoUnit.Size = new Size(156, 23);
+            txtPrecoUnit.TabIndex = 2;
             // 
             // txtDescricaoProd
             // 
@@ -198,13 +199,13 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private TextBox textBox3;
+        private TextBox txtPrecoUnit;
         private TextBox txtDescricaoProd;
         private TextBox txtNomeProduto;
         private Button btnProx;
         private Button BtnAnterior;
         private TextBox textBox4;
-        private ComboBox comboBox1;
+        private ComboBox cbTipoProd;
         private Label label5;
     }
 }
