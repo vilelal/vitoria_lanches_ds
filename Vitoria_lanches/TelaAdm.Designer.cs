@@ -31,12 +31,12 @@
             menuStrip1 = new MenuStrip();
             homeToolStripMenuItem = new ToolStripMenuItem();
             gerenciarProdutoToolStripMenuItem = new ToolStripMenuItem();
-            relatórioToolStripMenuItem = new ToolStripMenuItem();
-            panelADM = new Panel();
             criarProdutoToolStripMenuItem = new ToolStripMenuItem();
             excluirProdutoToolStripMenuItem = new ToolStripMenuItem();
             editarProdutoToolStripMenuItem = new ToolStripMenuItem();
             produtosCadastradosToolStripMenuItem = new ToolStripMenuItem();
+            relatórioToolStripMenuItem = new ToolStripMenuItem();
+            panelADM = new Panel();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -63,20 +63,6 @@
             gerenciarProdutoToolStripMenuItem.Size = new Size(120, 20);
             gerenciarProdutoToolStripMenuItem.Text = "Gerenciar Produtos";
             // 
-            // relatórioToolStripMenuItem
-            // 
-            relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
-            relatórioToolStripMenuItem.Size = new Size(66, 20);
-            relatórioToolStripMenuItem.Text = "Relatório";
-            // 
-            // panelADM
-            // 
-            panelADM.Dock = DockStyle.Fill;
-            panelADM.Location = new Point(0, 24);
-            panelADM.Name = "panelADM";
-            panelADM.Size = new Size(800, 426);
-            panelADM.TabIndex = 1;
-            // 
             // criarProdutoToolStripMenuItem
             // 
             criarProdutoToolStripMenuItem.Name = "criarProdutoToolStripMenuItem";
@@ -95,12 +81,27 @@
             editarProdutoToolStripMenuItem.Name = "editarProdutoToolStripMenuItem";
             editarProdutoToolStripMenuItem.Size = new Size(190, 22);
             editarProdutoToolStripMenuItem.Text = "Editar Produto";
+            editarProdutoToolStripMenuItem.Click += editarProdutoToolStripMenuItem_Click;
             // 
             // produtosCadastradosToolStripMenuItem
             // 
             produtosCadastradosToolStripMenuItem.Name = "produtosCadastradosToolStripMenuItem";
             produtosCadastradosToolStripMenuItem.Size = new Size(190, 22);
             produtosCadastradosToolStripMenuItem.Text = "Produtos Cadastrados";
+            // 
+            // relatórioToolStripMenuItem
+            // 
+            relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
+            relatórioToolStripMenuItem.Size = new Size(66, 20);
+            relatórioToolStripMenuItem.Text = "Relatório";
+            // 
+            // panelADM
+            // 
+            panelADM.Dock = DockStyle.Fill;
+            panelADM.Location = new Point(0, 24);
+            panelADM.Name = "panelADM";
+            panelADM.Size = new Size(800, 426);
+            panelADM.TabIndex = 1;
             // 
             // TelaAdm
             // 

@@ -113,3 +113,4 @@ U:\DS\3Bimestre\Vitoria_lanches\obj\Debug\net8.0-windows\Vitoria_lanches.boasvin
 U:\DS\3Bimestre\Vitoria_lanches\obj\Debug\net8.0-windows\Vitoria_lanches.GerenciadorProduto.resources
 U:\DS\3Bimestre\Vitoria_lanches\obj\Debug\net8.0-windows\Vitoria_lanches.LogarUsuario.resources
 U:\DS\3Bimestre\Vitoria_lanches\obj\Debug\net8.0-windows\Vitoria_lanches.TelaAdm.resources
+U:\DS\3Bimestre\Vitoria_lanches\obj\Debug\net8.0-windows\Vitoria_lanches.EditarProd.resources

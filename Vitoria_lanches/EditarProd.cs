@@ -13,127 +13,150 @@ namespace Vitoria_lanches
 {
     public partial class EditarProd : Form
     {
-        int idtemp = 1;
         private string string_conn = "server=127.0.0.1;database=bd_vitoria_lanches;user=root;password=root;";
 
 
         public EditarProd()
         {
             InitializeComponent();
+            mostrarProd();
+            tipoProdutos();
         }
 
-        private void EditarProd_Load(object sender, EventArgs e)
+        private void tipoProdutos()
         {
             using (MySqlConnection conn = new MySqlConnection(string_conn))
             {
                 conn.Open();
 
-                if (conexao.DataSave.vId > 0)
-                {
-                    txtNomeProduto.Text = conexao.DataSave.vNome;
-                    txtDescricaoProd.Text = conexao.DataSave.vDesc;
-                    txtPrecoUnit.Text = conexao.DataSave.vPreco.ToString();
-                }
-                else
-                {
-                    idtemp = 1;
-                    try
-                    {
-                        conexao.ExecutarUmaConsulta(idtemp);
-                        txtNomeProduto.Text = conexao.DataSave.vNome;
-                        txtDescricaoProd.Text = conexao.DataSave.vDesc;
-                        txtPrecoUnit.Text = conexao.DataSave.vPreco.ToString();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Erro ao obter o ID da tarefa: {ex.Message}");
-                    }
+                string sqlQuery = "SELECT TB_TIPO_PRODUTO_ID, TB_TIPO_PRODUTO_DESC FROM tb_tipo_produto";
 
+                MySqlDataAdapter data = new MySqlDataAdapter(sqlQuery, conn);
+                DataTable dt = new DataTable();
+                data.Fill(dt);
+                
+                cbTipoProd.DataSource = dt;
+                cbTipoProd.ValueMember = "TB_TIPO_PRODUTO_ID";
+                cbTipoProd.DisplayMember = "TB_TIPO_PRODUTO_DESC";
+                cbTipoProd.SelectedIndex = -1;
 
-                    //MessageBox.Show("Nenhuma tarefa selecionada para edição.");
-                }
-            }
-        }
-        private void btAnter_Click(object sender, EventArgs e)
-        {
-            idtemp = conexao.DataSave.vId - 1; // Pega o ID da tarefa selecionada
-            if (conexao.DataSave.vId > 1)
-            {
+                conn.Close();
 
-                try
-                {
-                    txtNomeProduto.Text = conexao.DataSave.vNome;
-                    txtDescricaoProd.Text = conexao.DataSave.vDesc;
-                    txtPrecoUnit.Text = conexao.DataSave.vPreco.ToString();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Erro ao obter o ID da tarefa: {ex.Message}");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Você já está na primeira tarefa.");
             }
         }
 
-
-
-        private void btnProx_Click_1(object sender, EventArgs e)
+        private void mostrarProd()
         {
-            int maximo = conexao.contarTarefas(); // Obtém o número total de tarefas
-            idtemp = conexao.DataSave.vId + 1; // Pega o ID da tarefa selecionada
 
-            if (idtemp > maximo)
+
+            using (MySqlConnection conn = new MySqlConnection(string_conn))
             {
-                MessageBox.Show("Você já está na última tarefa.");
+                conn.Open();
+                string query = "SELECT TB_PRODUTO_ID, TB_PRODUTO_NOME FROM tb_produto";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                MySqlDataAdapter adptar = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adptar.Fill(dt);
+                cbProdutos.SelectedIndexChanged -= cbProdutos_SelectedIndexChanged;
+                cbProdutos.DataSource = dt;
+                cbProdutos.DisplayMember = "TB_PRODUTO_NOME";
+                cbProdutos.ValueMember = "TB_PRODUTO_ID";
+                cbProdutos.SelectedIndex = -1;
+                cbProdutos.SelectedIndexChanged += cbProdutos_SelectedIndexChanged;
+
+
+            }
+            
+        }
+
+        private void cbProdutos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbProdutos.SelectedIndex == 0 || cbProdutos.SelectedValue == null)
                 return;
-            }
-            else
+            int Idlocal = Convert.ToInt32(cbProdutos.SelectedValue);
+
+            using (MySqlConnection conn = new MySqlConnection(string_conn))
             {
-                try
+                conn.Open();
+
+                string query = $"SELECT * FROM tb_produto WHERE TB_PRODUTO_ID = @ID";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
-                    conexao.ExecutarUmaConsulta(idtemp);
-                    txtNomeProduto.Text = conexao.DataSave.vNome;
-                    txtDescricaoProd.Text = conexao.DataSave.vDesc;
-                    txtPrecoUnit.Text = conexao.DataSave.vPreco.ToString();
+                    cmd.Parameters.AddWithValue("@ID", Idlocal); 
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            txtNomeProduto.Text = reader["TB_PRODUTO_NOME"].ToString();
+                            txtDescricaoProd.Text = reader["TB_PRODUTO_DESC"].ToString();
+                            decimal preco_prod = Convert.ToDecimal(reader["TB_PRODUTO_PRECO_UNIT"]);
+                            txtPrecoUnit.Text = preco_prod.ToString("0.00");
+                            
+                            cbTipoProd.SelectedValue = Convert.ToInt32(reader["TB_TIPO_PRODUTO_ID"].ToString());
+                        }
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Erro ao obter o ID da tarefa: {ex.Message}");
-                }
+
+
             }
         }
 
-        private void btAtu_Click(object sender, EventArgs e)
+
+        public string nomeProd { get; set; }
+        public string descricaoProd { get; set; }
+        public int TipoProd { get; set; }
+        public decimal preco { get; set; }
+
+        public bool EditProd(int id)
         {
-
-            string tNome = txtNomeProduto.Text;
-            string tDesc = txtDescricaoProd.Text;
-
-            int tId = conexao.DataSave.vId; 
-
-            string update = "UPDATE tb_produtos SET TB_PRODUTO_NOME = @Nome, TB_PRODUTO_DESC = @Desc,TB_TIPO_PRODUTO_ID = @idTipoProd  WHERE TB_PRODUTO_ID = @Id;";
-            // preenche os parâmetros para enviar 
-            update = update.Replace("@Nome", $"'{tNome}'")
-                                    
-                                 .Replace("@Desc", $"'{tDesc}'")
-                                 .Replace("@tb", $"'{tDesc}'")
-                                 .Replace("@Id", tId.ToString());
             try
             {
-                conexao.ExecutarComando(tualizala); // Executa o comando de atualização no banco de dados
-                MessageBox.Show("Tarefa atualizada com sucesso!");
-                this.Close(); // Fecha o formulário após a atualização da tarefa
+                using (MySqlConnection conn = new MySqlConnection(string_conn))
+                {
+                    conn.Open();
+                    string sql = "UPDATE tb_produto SET TB_PRODUTO_NOME = @nome, TB_PRODUTO_DESC = @desc, TB_TIPO_PRODUTO_ID = @tipo, TB_PRODUTO_PRECO_UNIT = @preco WHERE TB_PRODUTO_ID = @id";
+                    using (MySqlCommand stmt = new MySqlCommand(sql, conn))
+                    {
+                        stmt.Parameters.AddWithValue("@nome", nomeProd);
+                        stmt.Parameters.AddWithValue("@desc", descricaoProd);
+                        stmt.Parameters.AddWithValue("@tipo", TipoProd);
+                        stmt.Parameters.AddWithValue("@preco", preco);
+                        stmt.Parameters.AddWithValue("@id", id);
+                        stmt.ExecuteNonQuery();
+                    }
+                        MessageBox.Show("Produto editado com sucesso!");
+                        conn.Close();
+                        return true;
+                    
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Erro ao atualizar a tarefa: {ex.Message}");
-
+                MessageBox.Show($"Erro ao editar produto {ex.Message}");
+                return false;
             }
         }
 
-
+        private void btnAttProduto_Click(object sender, EventArgs e)
+        {
+            nomeProd = txtNomeProduto.Text;
+            descricaoProd = txtDescricaoProd.Text;
+            if (!decimal.TryParse(txtPrecoUnit.Text, out decimal precoParsed))
+            {
+                MessageBox.Show("Por favor, insira um valor numérico.");
+                return;
+            }
+            preco = precoParsed;
+            TipoProd = Convert.ToInt32(cbTipoProd.SelectedValue);
+         
+            int id = Convert.ToInt32(cbProdutos.SelectedValue);
+            if (EditProd(id))
+            {
+                mostrarProd();
+                MessageBox.Show("Produto atualizado com sucesso!");
+            }
+            
+        }
     }
 }
     

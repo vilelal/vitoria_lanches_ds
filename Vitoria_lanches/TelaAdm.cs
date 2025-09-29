@@ -40,6 +40,17 @@ namespace Vitoria_lanches
             Boasvindas.Show();
         }
 
+        private void EditarProd()
+        {
+            EditarProd EditProd = new EditarProd();
+            EditProd.TopLevel = false;
+            EditProd.FormBorderStyle = FormBorderStyle.None;
+            EditProd.Dock = DockStyle.Fill;
+            panelADM.Controls.Clear();
+            panelADM.Controls.Add(EditProd);
+            EditProd.Show();
+        }
+
         private void gerenciarProdutoToolStripMenuItem_Click(object sender, EventArgs e)
         {
         }
@@ -52,6 +63,11 @@ namespace Vitoria_lanches
         private void criarProdutoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             criarProd();
+        }
+
+        private void editarProdutoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditarProd();
         }
     }
 }
